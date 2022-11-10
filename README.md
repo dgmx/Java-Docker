@@ -19,14 +19,14 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-o
 
 Una vez instalado y configurado los permisos necesarios, comprobamos su correcto funcionamiento con el comando:
 
-ubuntu@aws:~$ docker ps
-CONTAINER ID   IMAGE    COMMAND    CREATED        STATUS            PORTS    NAMES
+    ubuntu@aws:~$ docker ps
+    CONTAINER ID   IMAGE    COMMAND    CREATED        STATUS            PORTS    NAMES
 
 Si en lugar de esa salida nos devuelve esta:
 
-Output
-docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
-See 'docker run --help'.
+    Output
+    docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
+    See 'docker run --help'.
 
 Los permisos no se aplicaron correctamente o debemos reiniciar la maquina.
 
@@ -42,11 +42,11 @@ Paso 3: crea el archivo Dockerfile
 
 Eche un vistazo al archivo Dockerfile:
 
-    `FROM eclipse-temurin:latest`
-    `WORKDIR /home/ubuntu/java-app`
-    `COPY . /home/ubuntu/java-app`
-    `RUN javac aplicacion.java`
-    `CMD ["java", "aplicacion"]`
+    FROM eclipse-temurin:latest
+    WORKDIR /home/ubuntu/java-app
+    COPY . /home/ubuntu/java-app
+    RUN javac aplicacion.java
+    CMD ["java", "aplicacion"]
 
 En el Dockerfile anterior , hemos extraído la imagen base de Java de DockerHub . Para esta práctica vamos a trabajar con una imagen de eclipse-temurin.
 Oracle ha decidido dejar de crear imágenes oficiales de Java para Docker y se recomienda usar alguna de las alternativas.
@@ -61,7 +61,7 @@ Paso 4: Crear la imagen de Docker
 
 Ahora, puede usar el comando de creación de nuestra imagen Docker que llamaremos java-app:
 
-docker build -t java-app .
+    docker build -t java-app .
 
 Para la práctica he usado el programa del ratón versión reallizada con hilos con la implementación Runnable, devolviendo el comando anterior los siguiente:
 
@@ -95,10 +95,10 @@ Successfully tagged java-app:latest
 
 Si revisamos las imagenes creadas:
 
-ubuntu@aws:~/java-app$ docker images
-REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
-java-app                 latest    9fa2f8f0033f   3 minutes ago   472MB
-eclipse-temurin          latest    a6d8b27b4ecf   40 hours ago    472MB
+    ubuntu@aws:~/java-app$ docker images
+    REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+    java-app                 latest    9fa2f8f0033f   3 minutes ago   472MB
+    eclipse-temurin          latest    a6d8b27b4ecf   40 hours ago    472MB
 
 Vemos que se han creado 2 imagenes, una conteniendo JDK que se ha descargado de docker hub y la otra con JDK y la aplicación empaquetada que hemos creado con el dockerfile
 
@@ -106,5 +106,5 @@ Paso 5: ejecutar el contenedor de Docker
 
 Una vez que haya creado su imagen de Docker, puede ejecutar su contenedor de Docker con el comando de ejecución de Docker. Esto ejecutará la aplicación java que veremos por el terminal:
 
-docker run -it --name ratonhilos java-app
+    docker run -it --name ratonhilos java-app
 
