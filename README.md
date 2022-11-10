@@ -65,33 +65,33 @@ Ahora, puede usar el comando de creación de nuestra imagen Docker que llamaremo
 
 Para la práctica he usado el programa del ratón versión reallizada con hilos con la implementación Runnable, devolviendo el comando anterior los siguiente:
 
-ubuntu@aws:~/java-app$ docker build -t java-app .
-Sending build context to Docker daemon  4.096kB
-Step 1/5 : FROM eclipse-temurin:latest
-latest: Pulling from library/eclipse-temurin
-e96e057aae67: Pull complete
-014fa72e018d: Pull complete
-e1edabaab1df: Pull complete
-24a80203ae94: Pull complete
-Digest: sha256:c08e6cabe5a01c84100b50f57e3c492e276783a6b9a937c0f1d4f1112d1b565d
-Status: Downloaded newer image for eclipse-temurin:latest
- ---> a6d8b27b4ecf
-Step 2/5 : WORKDIR /home/ubuntu/java-app
- ---> Running in 3c9eaa9a96dc
-Removing intermediate container 3c9eaa9a96dc
- ---> 6e56d9ae8a1f
-Step 3/5 : COPY . /home/ubuntu/java-app
- ---> f242c70c6db7
-Step 4/5 : RUN javac RatonSimple.java
- ---> Running in cb0856868ccf
-Removing intermediate container cb0856868ccf
- ---> 900367c8cc9b
-Step 5/5 : CMD ["java", "RatonSimple"]
- ---> Running in 0257c4730e8b
-Removing intermediate container 0257c4730e8b
- ---> 9fa2f8f0033f
-Successfully built 9fa2f8f0033f
-Successfully tagged java-app:latest
+    ubuntu@aws:~/java-app$ docker build -t java-app .
+    Sending build context to Docker daemon  4.096kB
+    Step 1/5 : FROM eclipse-temurin:latest
+    latest: Pulling from library/eclipse-temurin
+    e96e057aae67: Pull complete
+    014fa72e018d: Pull complete
+    e1edabaab1df: Pull complete
+    24a80203ae94: Pull complete
+    Digest: sha256:c08e6cabe5a01c84100b50f57e3c492e276783a6b9a937c0f1d4f1112d1b565d
+    Status: Downloaded newer image for eclipse-temurin:latest
+    ---> a6d8b27b4ecf
+    Step 2/5 : WORKDIR /home/ubuntu/java-app
+    ---> Running in 3c9eaa9a96dc
+    Removing intermediate container 3c9eaa9a96dc
+    ---> 6e56d9ae8a1f
+    Step 3/5 : COPY . /home/ubuntu/java-app
+    ---> f242c70c6db7
+    Step 4/5 : RUN javac RatonSimple.java
+    ---> Running in cb0856868ccf
+    Removing intermediate container cb0856868ccf
+    ---> 900367c8cc9b
+    Step 5/5 : CMD ["java", "RatonSimple"]
+    ---> Running in 0257c4730e8b
+    Removing intermediate container 0257c4730e8b
+    ---> 9fa2f8f0033f
+    Successfully built 9fa2f8f0033f
+    Successfully tagged java-app:latest
 
 Si revisamos las imagenes creadas:
 
