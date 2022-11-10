@@ -1,13 +1,13 @@
 # Java-Docker
-Como crear una aplicación Java en un contenedor Docker
+**Como crear una aplicación Java en un contenedor Docker
 
-Java es uno de los lenguajes más populares y es compatible con muchas aplicaciones empresariales. La ejecución de Java en máquinas locales requiere la instalación de Java IDE, Java JDK, Java JRE y requiere la configuración de rutas y variables de entorno. Esto puede parecer una tarea ardua, especialmente si solo desea ejecutar un programa simple.
+**Java** es uno de los lenguajes más populares y es compatible con muchas aplicaciones empresariales. La ejecución de Java en máquinas locales requiere la instalación de Java IDE, Java JDK, Java JRE y requiere la configuración de rutas y variables de entorno. Esto puede parecer una tarea ardua, especialmente si solo desea ejecutar un programa simple.
 
-Docker es una tecnología revolucionaria que permite empaquetar las aplicaciones en contenedores que incluyen todo lo necesario para que se puedan ejecutar de manera aislada. Cada contenedor almacena el código fuente de la aplicación, los archivos de configuración y todas las dependencias software que necesita permitiendo acelerar el proceso de desarrollo de las aplicaciones, facilitando la forma de distribuirlas y acelerando la automatización del despliegue en producción.
+**Docker** es una tecnología revolucionaria que permite empaquetar las aplicaciones en contenedores que incluyen todo lo necesario para que se puedan ejecutar de manera aislada. Cada contenedor almacena el código fuente de la aplicación, los archivos de configuración y todas las dependencias software que necesita permitiendo acelerar el proceso de desarrollo de las aplicaciones, facilitando la forma de distribuirlas y acelerando la automatización del despliegue en producción.
 
 En esta práctica, analizaremos cómo ejecutar Java dentro de contenedores Docker.
 
-Para empezar debemos aprovisionar una maquina Ubuntu Server en AWS. A continuación se adjunta manual para llevar a cabo este proceso
+Para empezar debemos aprovisionar una maquina Ubuntu Server en **AWS**. A continuación se adjunta manual para llevar a cabo este proceso
 
 https://educacionadistancia.juntadeandalucia.es/centros/almeria/pluginfile.php/627678/mod_page/content/8/uso_de_aws.pdf
 
@@ -32,13 +32,13 @@ Los permisos no se aplicaron correctamente o debemos reiniciar la maquina.
 
 Una vez esta todo correcto vamos a empezar a crear nuestra aplicación java empaquetada en un contenedor de Docker
 
-Paso 1. Crear carpeta llamada java-app y acceder a la misma
+**Paso 1. Crear carpeta llamada java-app y acceder a la misma
 
-Paso 2: Crear la aplicación Java
+**Paso 2: Crear la aplicación Java
 
 Utilizaremos una aplicación Java de los ejercicios realizados en los temas anteriores, como por ejemplo
 
-Paso 3: crea el archivo Dockerfile
+**Paso 3: crea el archivo Dockerfile
 
 Eche un vistazo al archivo Dockerfile:
 
@@ -57,7 +57,7 @@ Hemos configurado el directorio de trabajo y copiamos los archivos al directorio
 
 En la carpeta en la que estamos, java-app debe haber 2 archivos, el archivo .java y otro llamado dockerfile.
 
-Paso 4: Crear la imagen de Docker
+**Paso 4: Crear la imagen de Docker que contiene java y la aplicación
 
 Ahora, puede usar el comando de creación de nuestra imagen Docker que llamaremos java-app:
 
@@ -102,7 +102,7 @@ Si revisamos las imagenes creadas:
 
 Vemos que se han creado 2 imagenes, una conteniendo JDK que se ha descargado de docker hub y la otra con JDK y la aplicación empaquetada que hemos creado con el dockerfile
 
-Paso 5: ejecutar el contenedor de Docker
+**Paso 5: ejecutar el contenedor de Docker
 
 Una vez que haya creado su imagen de Docker, puede ejecutar su contenedor de Docker con el comando de ejecución de Docker. Esto ejecutará la aplicación java que veremos por el terminal:
 
