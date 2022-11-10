@@ -42,11 +42,11 @@ Paso 3: crea el archivo Dockerfile
 
 Eche un vistazo al archivo Dockerfile:
 
-`FROM eclipse-temurin:latest`
-`WORKDIR /home/ubuntu/java-app`
-`COPY . /home/ubuntu/java-app
-``RUN javac aplicacion.java`
-`CMD ["java", "aplicacion"]`
+    `FROM eclipse-temurin:latest`
+    `WORKDIR /home/ubuntu/java-app`
+    `COPY . /home/ubuntu/java-app`
+    `RUN javac aplicacion.java`
+    `CMD ["java", "aplicacion"]`
 
 En el Dockerfile anterior , hemos extraído la imagen base de Java de DockerHub . Para esta práctica vamos a trabajar con una imagen de eclipse-temurin.
 Oracle ha decidido dejar de crear imágenes oficiales de Java para Docker y se recomienda usar alguna de las alternativas.
